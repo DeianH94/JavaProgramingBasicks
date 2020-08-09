@@ -1,0 +1,31 @@
+package exercises;
+
+import java.util.Scanner;
+
+public class HalfSumElement {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int numOfLines = Integer.parseInt(scanner.nextLine());
+        int sum = 0;
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < numOfLines; i++) {
+            int number = Integer.parseInt(scanner.nextLine());
+            sum += number;
+
+            max = Math.max(max, number);
+        }
+
+        int sumWithoutMaxNumber = sum - max;
+
+        if (max == sumWithoutMaxNumber) {
+            System.out.println("Yes");
+            System.out.println("Sum = " + max);
+        } else {
+            int diff = Math.abs(max - sumWithoutMaxNumber);
+            System.out.println("No");
+            System.out.println("Diff = " + diff);
+        }
+    }
+}
